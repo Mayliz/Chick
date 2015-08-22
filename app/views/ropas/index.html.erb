@@ -1,0 +1,29 @@
+<h1>Listing ropas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ropas.each do |ropa| %>
+      <tr>
+        <td><%= ropa.nombre %></td>
+        <td><%= ropa.tipo %></td>
+        <td><%= ropa.picture %></td>
+        <td><%= link_to 'Show', ropa %></td>
+        <td><%= link_to 'Edit', edit_ropa_path(ropa) %></td>
+        <td><%= link_to 'Destroy', ropa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ropa', new_ropa_path %>
